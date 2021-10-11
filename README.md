@@ -1,5 +1,7 @@
 # toolbox
 
+A toolbox written in electron. Thanks api provided by [free api](https://www.free-api.com/)
+
 ## Project setup
 ```
 npm install
@@ -13,6 +15,16 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
+```
+
+### Compiles and hot-reloads for electron development
+```
+npm run electron:serve
+```
+
+### Compiles and minifies for electron production
+```
+npm run electron:build
 ```
 
 ### Lints and fixes files
