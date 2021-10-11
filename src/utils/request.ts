@@ -26,6 +26,7 @@ export default <T>(
         _url += '?' + s.toString()
       }
     } else {
+      options.method = 'POST'
       options.headers = {
         'Content-Type': 'application/json'
       }

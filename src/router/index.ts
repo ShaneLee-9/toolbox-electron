@@ -19,6 +19,15 @@ export const navRoutes: Array<NavRouteItem> = [
       icon: 'fas fa-dice',
       label: '随机活动'
     }
+  },
+  {
+    path: '/mockExpress',
+    name: 'MockExpress',
+    component: () => import('@/views/ExpressMock.vue'),
+    meta: {
+      icon: 'fas fa-shipping-fast',
+      label: '模拟快递'
+    }
   }
 ]
 

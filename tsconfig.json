@@ -15,7 +15,8 @@
     "types": [
       "webpack-env",
       "randomcolor",
-      "express"
+      "express",
+      "body-parser"
     ],
     "paths": {
       "@/*": [
