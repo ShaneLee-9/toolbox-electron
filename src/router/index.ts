@@ -1,20 +1,33 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHistory, RouteMeta, RouteRecordRaw } from 'vue-router'
+import RandomActivity from '../views/RandomActivity.vue'
+
+interface NavRouteMeta extends RouteMeta {
+  icon: string
+  label: string
+}
+
+type NavRouteItem = RouteRecordRaw & {
+  meta: NavRouteMeta
+}
+
+export const navRoutes: Array<NavRouteItem> = [
+  {
+    path: '/randomActivity',
+    name: 'RandomActivity',
+    component: RandomActivity,
+    meta: {
+      icon: 'fas fa-dice',
+      label: '随机活动'
+    }
+  }
+]
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: '/randomActivity'
   },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  ...navRoutes
 ]
 
 const router = createRouter({
