@@ -7,7 +7,7 @@ type resType = 'json' | 'text'
 
 export default <T>(
   url: string,
-  params: params,
+  params: params = {},
   method: methods = 'GET',
   resType: resType = 'json'
 ): Promise<T> => {

@@ -28,6 +28,15 @@ export const navRoutes: Array<NavRouteItem> = [
       icon: 'fas fa-shipping-fast',
       label: '模拟快递'
     }
+  },
+  {
+    path: '/news',
+    name: 'TodayNews',
+    component: () => import('@/views/TodayNews.vue'),
+    meta: {
+      icon: 'fas fa-newspaper',
+      label: '今日头条'
+    }
   }
 ]
 
