@@ -53,13 +53,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import randomColor from 'randomcolor'
 import { setCssVar } from 'quasar'
 import { navRoutes } from '@/router'
 
+const route = useRoute()
 const leftDrawerOpen = ref<boolean>(false)
-setCssVar('primary', randomColor({ luminosity: 'bright' }))
+
+// 每次切换路由就切换主题色
+watch(route, () => {
+  setCssVar('primary', randomColor({ luminosity: 'bright' }))
+})
 </script>
 
 <style lang="stylus">

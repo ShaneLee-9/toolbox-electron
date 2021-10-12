@@ -3,7 +3,7 @@ import { getStrictType } from '@/utils/helper'
 
 type methods = 'GET' | 'POST'
 type params = Record<string, unknown> | null | undefined
-type resType = 'json' | 'text'
+type resType = 'json' | 'text' | 'blob'
 
 export default <T>(
   url: string,
@@ -43,6 +43,7 @@ export default <T>(
     fetch(_url, options)
       .then(res => {
         if (resType === 'text') return res.text()
+        if (resType === 'blob') return res.blob()
         return res.json()
       })
       .then(res => {

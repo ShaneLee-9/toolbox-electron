@@ -37,6 +37,15 @@ export const navRoutes: Array<NavRouteItem> = [
       icon: 'fas fa-newspaper',
       label: '今日头条'
     }
+  },
+  {
+    path: '/website-bg',
+    name: 'WebsiteBg',
+    component: () => import('@/views/WebsiteBg.vue'),
+    meta: {
+      icon: 'fab fa-firstdraft',
+      label: '网站背景'
+    }
   }
 ]
 
